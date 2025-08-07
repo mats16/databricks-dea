@@ -16,11 +16,11 @@
         "E": "データレイクハウスは、バッチ解析とストリーミング解析の両方を可能する"
       },
       "correct_answer": "E",
-      "explanation": "Databricksのレイクハウスプラットフォームでは従来のDWHのようなバッチ処理に加えてストリーミングも一つのプラットフォーム上で処理できます。"
+      "explanation": "Databricks のレイクハウスプラットフォームでは従来の DWH のようなバッチ処理に加えてストリーミングも一つのプラットフォーム上で処理できます。"
     },
     {
       "question_number": 2,
-      "question_text": "Databricksが管理するクラスタのドライバノードとワーカーノードをホストする場所は、次のうちどれですか？",
+      "question_text": "Databricks が管理するクラスタのドライバノードとワーカーノードをホストする場所は、次のうちどれですか？",
       "options": {
         "A": "データプレーン",
         "B": "コントロールプレーン",
@@ -33,16 +33,16 @@
     },
     {
       "question_number": 3,
-      "question_text": "あるデータアーキテクトは、動画を使った機械学習と監査に対応したバッチETL/ELTの両方に対応するアーキテクチャを設計しています。次のうち、データレイクハウスが両方のワークロードのニーズを満たす理由について説明しているものはどれですか？",
+      "question_text": "あるデータアーキテクトは、動画を使った機械学習と監査に対応したバッチ ETL/ELT の両方に対応するアーキテクチャを設計しています。次のうち、データレイクハウスが両方のワークロードのニーズを満たす理由について説明しているものはどれですか？",
       "options": {
         "A": "データレイクハウスは、データモデリングをほとんど必要としない。",
         "B": "データレイクハウスは、シンプルなガバナンスのためにコンピュートとストレージを組み合わせている。",
         "C": "データレイクハウスは、コンピュートクラスタのオートスケーリングを提供する。",
-        "D": "データレイクハウスは、非構造化データを格納し、ACIDに準拠しています。",
+        "D": "データレイクハウスは、非構造化データを格納し、ACID に準拠しています。",
         "E": "データレイクハウスは、完全にクラウドに存在します。"
       },
       "correct_answer": "D",
-      "explanation": "Delta Lakeは構造化データに加えて動画や画像などの非構造化データにも対応しており、また信頼性を高めるためにACID準拠しています。"
+      "explanation": "Delta Lake は構造化データに加えて動画や画像などの非構造化データにも対応しており、また信頼性を高めるために ACID 準拠しています。"
     },
     {
       "question_number": 4,
@@ -51,7 +51,7 @@
         "A": "計算コストを最小限に抑えながら、アドホック分析レポートを作成する必要がある。",
         "B": "データチームが共同で機械学習モデルを開発する必要がある。",
         "C": "自動化されたワークフローを30分ごとに実行する必要がある。",
-        "D": "上長への報告のためにDatabricksのSQLクエリをスケジュール実行する必要がある。",
+        "D": "上長への報告のために Databricks の SQL クエリをスケジュール実行する必要がある。",
         "E": "データエンジニアは、手動で本番エラーを調査する必要があります。"
       },
       "correct_answer": "C",
@@ -64,7 +64,7 @@
         "A": "リポジトリ",
         "B": "ジョブ",
         "C": "データエクスプローラー",
-        "D": "Databricks ファイルシステム（DBFS）",
+        "D": "Databricks ファイルシステム (DBFS)",
         "E": "ダッシュボード"
       },
       "correct_answer": "C",
@@ -74,18 +74,18 @@
       "question_number": 6,
       "question_text": "若手データエンジニア二人が、データパイプラインに用いる一つのノートブックの別々の部分を編集しています。二人は別々の Git ブランチで作業しているので、同じノートブックで同時にペアプログラミングを行うことができます。Databricks の経験豊富なシニアデータエンジニアが、このようなコラボレーションには、より良い代替手段があることを示唆しています。次のうち、シニアデータエンジニアの主張をサポートするものはどれですか？",
       "options": {
-        "A": "Databricks Notebooksは、自動的な変更追跡とバージョン管理をサポートしています。",
-        "B": "Databricks Notebooksは、1つのノートブック上でリアルタイムの共同執筆をサポートします。",
+        "A": "Databricks Notebooks は、自動的な変更追跡とバージョン管理をサポートしています。",
+        "B": "Databricks Notebooks は、1つのノートブック上でリアルタイムの共同執筆をサポートします。",
         "C": "Databricks Notebooks は、コメントと通知コメントをサポートしています。",
-        "D": "Databricks Notebooksは、同じノートブックでの複数言語の使用をサポートしています。",
+        "D": "Databricks Notebooks は、同じノートブックでの複数言語の使用をサポートしています。",
         "E": "Databricks Notebooks では、インタラクティブなデータ可視化の作成がサポートされています。"
       },
       "correct_answer": "B",
-      "explanation": "URLを共有すると同じノートブック上でリアルタイムに編集可能です。"
+      "explanation": "URL を共有すると同じノートブック上でリアルタイムに編集可能です。"
     },
     {
       "question_number": 7,
-      "question_text": "Databricks ReposがDatabricks Lakehouse Platform上でCI/CDワークフローを促進する方法について説明しているのは次のうちどれでしょうか？",
+      "question_text": "Databricks ReposがDatabricks Lakehouse Platform 上で CI/CD ワークフローを促進する方法について説明しているのは次のうちどれでしょうか？",
       "options": {
         "A": "リポジトリは、プルリクエスト、レビュー、およびブランチのマージ前の承認プロセスを促進することができます。",
         "B": "リポジトリは、セカンダリ Git ブランチの変更をメイン Git ブランチにマージすることができます。",
@@ -98,33 +98,33 @@
     },
     {
       "question_number": 8,
-      "question_text": "デルタレイクを説明した文章は次のうちどれでしょう？",
+      "question_text": "Delta Lake を説明した文章は次のうちどれでしょう？",
       "options": {
-        "A": "Delta Lakeは、ビッグデータのワークロードに使用されるオープンソースの分析エンジンです。",
-        "B": "Delta Lakeは、信頼性、セキュリティ、パフォーマンスを提供するオープンフォーマットのストレージレイヤーです。",
-        "C": "Delta Lakeは、完全な機械学習のライフサイクルを管理するためのオープンソースプラットフォームです。",
-        "D": "Delta Lakeは、分散データのためのオープンソースのデータストレージフォーマットです。",
-        "E": "Delta Lakeは、データを処理するオープンフォーマットのストレージレイヤーです。"
+        "A": "Delta Lake は、ビッグデータのワークロードに使用されるオープンソースの分析エンジンです。",
+        "B": "Delta Lake は、信頼性、セキュリティ、パフォーマンスを提供するオープンフォーマットのストレージレイヤーです。",
+        "C": "Delta Lake は、完全な機械学習のライフサイクルを管理するためのオープンソースプラットフォームです。",
+        "D": "Delta Lake は、分散データのためのオープンソースのデータストレージフォーマットです。",
+        "E": "Delta Lake は、データを処理するオープンフォーマットのストレージレイヤーです。"
       },
       "correct_answer": "B",
-      "explanation": "Delta Lakeは信頼性、セキュリティ、パフォーマンスを提供するオープンフォーマットのストレージレイヤーです。"
+      "explanation": "Delta Lake は信頼性、セキュリティ、パフォーマンスを提供するオープンフォーマットのストレージレイヤーです。"
     },
     {
       "question_number": 9,
-      "question_text": "あるデータアーキテクトは、次のような形式の表が必要であると判断した。この名前のテーブルがすでに存在するかどうかにかかわらず、上記の形式で空のDelta テーブルを上記のフォーマットで作成するためには次のコードブロックのどれが適切か。",
+      "question_text": "あるデータアーキテクトは、次のような形式の表が必要であると判断した。この名前のテーブルがすでに存在するかどうかにかかわらず、上記の形式で空の Delta テーブルを上記のフォーマットで作成するためには次のコードブロックのどれが適切か。",
       "options": {
-        "A": "CREATE OR REPLACE TABLE table_name AS SELECT id STRING, birthDate DATE, avgRating FLOAT USING DELTA",
-        "B": "CREATE OR REPLACE TABLE table_name (id STRING, birthDate DATE, avgRating FLOAT)",
-        "C": "CREATE TABLE IF NOT EXISTS table_name (id STRING, birthDate DATE, avgRating FLOAT)",
-        "D": "CREATE TABLE table_name AS SELECT id STRING, birthDate DATE, avgRating FLOAT",
-        "E": "CREATE OR REPLACE TABLE table_name WITH COLUMNS ( id STRING, birthDate DATE, avgRating FLOAT) USING DELTA"
+        "A": "`CREATE OR REPLACE TABLE table_name AS SELECT id STRING, birthDate DATE, avgRating FLOAT USING DELTA`",
+        "B": "`CREATE OR REPLACE TABLE table_name (id STRING, birthDate DATE, avgRating FLOAT)`",
+        "C": "`CREATE TABLE IF NOT EXISTS table_name (id STRING, birthDate DATE, avgRating FLOAT)`",
+        "D": "`CREATE TABLE table_name AS SELECT id STRING, birthDate DATE, avgRating FLOAT`",
+        "E": "`CREATE OR REPLACE TABLE table_name WITH COLUMNS ( id STRING, birthDate DATE, avgRating FLOAT) USING DELTA`"
       },
       "correct_answer": "B",
-      "explanation": "CREATE OR REPLACE TABLEを使用することで、既存のテーブルがあっても新しいテーブルを作成できます。"
+      "explanation": "`CREATE OR REPLACE TABLE` を使用することで、既存のテーブルがあっても新しいテーブルを作成できます。"
     },
     {
       "question_number": 10,
-      "question_text": "次のSQLキーワードのうち、既存のDeltaテーブルに新しい行を追加するために使用できるのはどれですか？",
+      "question_text": "次のSQLキーワードのうち、既存の Delta テーブルに新しい行を追加するために使用できるのはどれですか？",
       "options": {
         "A": "UPDATE",
         "B": "COPY",
@@ -133,11 +133,11 @@
         "E": "UNION"
       },
       "correct_answer": "C",
-      "explanation": "INSERT INTOは既存のテーブルに新しい行を追加するためのSQLコマンドです。"
+      "explanation": "`INSERT INTO` は既存のテーブルに新しい行を追加するための SQL コマンドです。"
     },
     {
       "question_number": 11,
-      "question_text": "データエンジニアリングチームはDelta テーブルから同じ条件を満たす行を抽出する必要があります。しかし、クエリの実行速度が遅いことに気づき、データファイルのサイズを調整しました。調査した結果、条件を満たす行は各ファイルにまばらに配置されていることがわかりました。次の最適化手法のうち、どれがクエリを高速化できるでしょうか。",
+      "question_text": "データエンジニアリングチームは Delta テーブルから同じ条件を満たす行を抽出する必要があります。しかし、クエリの実行速度が遅いことに気づき、データファイルのサイズを調整しました。調査した結果、条件を満たす行は各ファイルにまばらに配置されていることがわかりました。次の最適化手法のうち、どれがクエリを高速化できるでしょうか。",
       "options": {
         "A": "データスキッピング",
         "B": "Z-Order",
@@ -146,33 +146,33 @@
         "E": "ファイルサイズの調整"
       },
       "correct_answer": "B",
-      "explanation": "Z-Orderコマンドを使用することで、カラム内で同じデータを物理的にまとめて配置し、より効率的なデータスキッピングでI/O効率を向上させることができます。"
+      "explanation": "Z-Order コマンドを使用することで、カラム内で同じデータを物理的にまとめて配置し、より効率的なデータスキッピングでI/O効率を向上させることができます。"
     },
     {
       "question_number": 12,
-      "question_text": "データエンジニアが customer360 というデータベースを /customer/customer360 という場所に作成する必要があります。データエンジニアは、同僚の1人がすでにデータベースを作成しているかどうかわからない。データエンジニアは、このタスクを完了するために次のどのコマンドを実行する必要がありますか？",
+      "question_text": "データエンジニアが `customer360` というデータベースを `/customer/customer360` という場所に作成する必要があります。データエンジニアは、同僚の1人がすでにデータベースを作成しているかどうかわからない。データエンジニアは、このタスクを完了するために次のどのコマンドを実行する必要がありますか？",
       "options": {
-        "A": "CREATE DATABASE customer360 LOCATION '/customer/customer360';",
-        "B": "CREATE DATABASE IF NOT EXISTS customer360;",
-        "C": "CREATE DATABASE IF NOT EXISTS customer360 LOCATION '/customer/customer360'",
-        "D": "CREATE DATABASE IF NOT EXISTS customer360 DELTA LOCATION '/customer/customer360'",
-        "E": "CREATE DATABASE customer360 DELTA LOCATION '/customer/customer360';"
+        "A": "`CREATE DATABASE customer360 LOCATION '/customer/customer360';`",
+        "B": "`CREATE DATABASE IF NOT EXISTS customer360;`",
+        "C": "`CREATE DATABASE IF NOT EXISTS customer360 LOCATION '/customer/customer360'`",
+        "D": "`CREATE DATABASE IF NOT EXISTS customer360 DELTA LOCATION '/customer/customer360'`",
+        "E": "`CREATE DATABASE customer360 DELTA LOCATION '/customer/customer360';`"
       },
       "correct_answer": "C",
-      "explanation": "IF NOT EXISTSを使用することで既存のデータベースがある場合はエラーを回避でき、LOCATIONを指定することでデータの格納場所を指定できます。"
+      "explanation": "`IF NOT EXISTS` を使用することで既存のデータベースがある場合はエラーを回避でき、`LOCATION` を指定することでデータの格納場所を指定できます。"
     },
     {
       "question_number": 13,
-      "question_text": "ジュニアデータエンジニアは、Sparkがデータとメタデータの両方を管理するSpark SQLテーブルmy_tableを作成する必要があります。メタデータとデータはDatabricks Filesystem (DBFS)に保存される必要があります。このタスクを完了するために、シニアデータエンジニアがジュニアデータエンジニアと共有すべきコマンドは次のうちどれですか？",
+      "question_text": "ジュニアデータエンジニアは、Spark がデータとメタデータの両方を管理する Spark SQL テーブル `my_table` を作成する必要があります。メタデータとデータは Databricks Filesystem (DBFS) に保存される必要があります。このタスクを完了するために、シニアデータエンジニアがジュニアデータエンジニアと共有すべきコマンドは次のうちどれですか？",
       "options": {
-        "A": "CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"storage-path\")",
-        "B": "CREATE MANAGED TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"storage-path\")",
-        "C": "CREATE MANAGED TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet",
-        "D": "CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"dbfs:///storage-path\")",
-        "E": "CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet"
+        "A": "`CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"storage-path\")`",
+        "B": "`CREATE MANAGED TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"storage-path\")`",
+        "C": "`CREATE MANAGED TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet`",
+        "D": "`CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"dbfs:///storage-path\")`",
+        "E": "`CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet`"
       },
       "correct_answer": "E",
-      "explanation": "デフォルトでManagedテーブルが作成され、データとメタデータの両方をDatabricksが管理します。"
+      "explanation": "デフォルトで Managed テーブルが作成され、データとメタデータの両方を Databricks が管理します。"
     },
     {
       "question_number": 14,
@@ -202,16 +202,16 @@
     },
     {
       "question_number": 16,
-      "question_text": "customerLocations テーブルは以下のスキーマで存在します。id STRING, date STRING, city STRING, country STRING。シニアデータエンジニアは、このテーブルから次のコマンドを使用して新しいテーブルを作成することを望んでいます。CREATE TABLE customersPerCountry AS SELECT country, COUNT(*) AS customers FROM customerLocations GROUP BY country; ジュニアデータエンジニアが、新しいテーブルに対してスキーマを宣言しない理由を尋ねました。次の回答のうち、スキーマの宣言が必要ない理由を説明するものはどれですか？",
+      "question_text": "customerLocations テーブルは以下のスキーマで存在します。```id STRING, date STRING, city STRING, country STRING```。シニアデータエンジニアは、このテーブルから次のコマンドを使用して新しいテーブルを作成することを望んでいます。CREATE TABLE customersPerCountry AS SELECT country, COUNT(*) AS customers FROM customerLocations GROUP BY country; ジュニアデータエンジニアが、新しいテーブルに対してスキーマを宣言しない理由を尋ねました。次の回答のうち、スキーマの宣言が必要ない理由を説明するものはどれですか？",
       "options": {
-        "A": "CREATE TABLE AS SELECTステートメントは、ソーステーブルからスキーマの詳細を採用する",
-        "B": "CREATE TABLE AS SELECT文は、データをスキャンすることによってスキーマを推測します。",
-        "C": "CREATE TABLE AS SELECT ステートメントは、スキーマがオプションであるテーブルを生成します。",
-        "D": "CREATE TABLE AS SELECT文は、すべての列にSTRING型を割り当てます。",
-        "E": "CREATE TABLE AS SELECT ステートメントは、スキーマをサポートしないテーブルをもたらします。"
+        "A": "`CREATE TABLE AS SELECT` ステートメントは、ソーステーブルからスキーマの詳細を採用する",
+        "B": "`CREATE TABLE AS SELECT` 文は、データをスキャンすることによってスキーマを推測します。",
+        "C": "`CREATE TABLE AS SELECT` ステートメントは、スキーマがオプションであるテーブルを生成します。",
+        "D": "`CREATE TABLE AS SELECT` 文は、すべての列に STRING 型を割り当てます。",
+        "E": "`CREATE TABLE AS SELECT` ステートメントは、スキーマをサポートしないテーブルをもたらします。"
       },
       "correct_answer": "A",
-      "explanation": "CREATE TABLE AS SELECT（CTAS）ステートメントはソーステーブルのスキーマ情報を採用してテーブルを作成します。"
+      "explanation": "`CREATE TABLE AS SELECT` (CTAS) ステートメントはソーステーブルのスキーマ情報を採用してテーブルを作成します。"
     },
     {
       "question_number": 17,
@@ -228,16 +228,16 @@
     },
     {
       "question_number": 18,
-      "question_text": "次のコマンドのどれが、既存のDeltaテーブルmy_tableから重複削除されたレコードを返すか？",
+      "question_text": "次のコマンドのどれが、既存の Delta テーブル `my_table` から重複削除されたレコードを返すか？",
       "options": {
-        "A": "DROP DUPLICATES FROM my_table;",
-        "B": "SELECT * FROM my_table WHERE duplicate = False;",
-        "C": "SELECT DISTINCT * FROM my_table;",
-        "D": "MERGE INTO my_table a USING new_records b ON a.id = b.id WHEN NOT MATCHED THEN INSERT *;",
-        "E": "MERGE INTO my_table a USING new_records b;"
+        "A": "`DROP DUPLICATES FROM my_table;`",
+        "B": "`SELECT * FROM my_table WHERE duplicate = False;`",
+        "C": "`SELECT DISTINCT * FROM my_table;`",
+        "D": "`MERGE INTO my_table a USING new_records b ON a.id = b.id WHEN NOT MATCHED THEN INSERT *;`",
+        "E": "`MERGE INTO my_table a USING new_records b;`"
       },
       "correct_answer": "C",
-      "explanation": "SELECT DISTINCT句を使うと重複レコードが削除されます。"
+      "explanation": "`SELECT DISTINCT` 句を使うと重複レコードが削除されます。"
     },
     {
       "question_number": 19,
@@ -250,33 +250,33 @@
         "E": "UNION"
       },
       "correct_answer": "A",
-      "explanation": "INNER JOINは共有カラムをキーとして使用し、両方のテーブルに存在する行のみを結果に含めます。"
+      "explanation": "`INNER JOIN` は共有カラムをキーとして使用し、両方のテーブルに存在する行のみを結果に含めます。"
     },
     {
       "question_number": 20,
-      "question_text": "ジュニアデータエンジニアは、JSONファイルを以下のスキーマを持つテーブルraw_tableにインジェストしました。cart_id STRING, items ARRAY [item_id:STRING]。ジュニア・データ・エンジニアは、raw_table の items カラムをアンネストして、以下のスキーマを持つ新しいテーブルを作成したいと考えています。cart_id STRING, item_id STRING。このタスクを完了するために、ジュニアデータエンジニアは次のどのコマンドを実行する必要がありますか？",
+      "question_text": "ジュニアデータエンジニアは、JSON ファイルを以下のスキーマを持つテーブル `raw_table` にインジェストしました。```cart_id STRING, items ARRAY [item_id:STRING]``` ジュニア・データ・エンジニアは、raw_table の items カラムをアンネストして、以下のスキーマを持つ新しいテーブルを作成したいと考えています。```cart_id STRING, item_id STRING```このタスクを完了するために、ジュニアデータエンジニアは次のどのコマンドを実行する必要がありますか？",
       "options": {
-        "A": "SELECT cart_id, filter(items) AS item_id FROM raw_table;",
-        "B": "SELECT cart_id, flatten(items) AS item_id FROM raw_table;",
-        "C": "SELECT cart_id, reduce(items) AS item_id FROM raw_table;",
-        "D": "SELECT cart_id, explode(items) AS item_id FROM raw_table;",
-        "E": "SELECT cart_id, slice(items) AS item_id FROM raw_table;"
+        "A": "`SELECT cart_id, filter(items) AS item_id FROM raw_table;`",
+        "B": "`SELECT cart_id, flatten(items) AS item_id FROM raw_table;`",
+        "C": "`SELECT cart_id, reduce(items) AS item_id FROM raw_table;`",
+        "D": "`SELECT cart_id, explode(items) AS item_id FROM raw_table;`",
+        "E": "`SELECT cart_id, slice(items) AS item_id FROM raw_table;`"
       },
       "correct_answer": "D",
-      "explanation": "explodeはARRAY/MAPのような入れ子構造のデータを展開して値を列にする際に使用します。"
+      "explanation": "`explode` は ARRAY/MAP のような入れ子構造のデータを展開して値を列にする際に使用します。"
     },
     {
       "question_number": 21,
-      "question_text": "ジュニアデータエンジニアは、JSONファイルを以下のスキーマを持つテーブルraw_tableにインジェストしました。transaction_id STRING, payload ARRAY [customer_id:STRING, date:TIMESTAMP, store_id:STRING]。データエンジニアは、各トランザクションの日付を以下のスキーマのテーブルに効率的に抽出したいと考えています。transaction_id STRING, date TIMESTAMP。このタスクを完了するために、データエンジニアは次のどのコマンドを実行する必要がありますか？",
+      "question_text": "ジュニアデータエンジニアは、JSON ファイルを以下のスキーマを持つテーブル `raw_table` にインジェストしました。```transaction_id STRING, payload ARRAY [customer_id:STRING, date:TIMESTAMP, store_id:STRING]``` データエンジニアは、各トランザクションの日付を以下のスキーマのテーブルに効率的に抽出したいと考えています。```transaction_id STRING, date TIMESTAMP``` このタスクを完了するために、データエンジニアは次のどのコマンドを実行する必要がありますか？",
       "options": {
-        "A": "SELECT transaction_id, explode(payload) FROM raw_table;",
-        "B": "SELECT transaction_id, payload.date FROM raw_table;",
-        "C": "SELECT transaction_id, date FROM raw_table;",
-        "D": "SELECT transaction_id, payload[date] FROM raw_table;",
-        "E": "SELECT transaction_id, date from payload FROM raw_table;"
+        "A": "`SELECT transaction_id, explode(payload) FROM raw_table;`",
+        "B": "`SELECT transaction_id, payload.date FROM raw_table;`",
+        "C": "`SELECT transaction_id, date FROM raw_table;`",
+        "D": "`SELECT transaction_id, payload[date] FROM raw_table;`",
+        "E": "`SELECT transaction_id, date from payload FROM raw_table;`"
       },
       "correct_answer": "B",
-      "explanation": "Arrayの値を取得するためにはArray.Elementで取得します。"
+      "explanation": "Array の値を取得するためには Array.Element で取得します。"
     },
     {
       "question_number": 22,

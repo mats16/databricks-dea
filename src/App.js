@@ -13,6 +13,57 @@ const App = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
 
+  const formatSQL = (sql) => {
+    return sql
+      .replace(/\s+/g, ' ')
+      .replace(/\s*;\s*$/, ';')
+      .replace(/\b(CREATE|SELECT|FROM|WHERE|INSERT|UPDATE|DELETE|DROP|ALTER|IF NOT EXISTS|LOCATION|DELTA)\b/gi, '\n$1')
+      .replace(/\n\s*\n/g, '\n')
+      .trim()
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => line.length > 0)
+      .join('\n');
+  };
+
+  const detectLanguage = (code) => {
+    const trimmedCode = code.trim();
+    
+    // Check for SQL keywords
+    const sqlKeywords = /^\s*(CREATE|SELECT|INSERT|UPDATE|DELETE|DROP|ALTER|WITH|MERGE|GRANT|REVOKE|SHOW|DESCRIBE|EXPLAIN)\b/i;
+    if (sqlKeywords.test(trimmedCode)) {
+      return 'sql';
+    }
+    
+    return null;
+  };
+
+  const renderMarkdown = (text) => {
+    const parts = text.split(/(```[^`]*```|`[^`]+`)/g);
+    
+    return parts.map((part, index) => {
+      if (part.startsWith('```') && part.endsWith('```') && part.length > 6) {
+        const code = part.slice(3, -3);
+        const language = detectLanguage(code);
+        const formattedCode = language === 'sql' ? formatSQL(code) : code;
+        
+        return (
+          <React.Fragment key={index}>
+            <br />
+            <code style={{ display: 'block' }}>{formattedCode}</code>
+            <br />
+          </React.Fragment>
+        );
+      } else if (part.startsWith('`') && part.endsWith('`') && part.length > 2) {
+        const code = part.slice(1, -1);
+        const language = detectLanguage(code);
+        const formattedCode = language === 'sql' ? formatSQL(code) : code;
+        return <code key={index}>{formattedCode}</code>;
+      }
+      return part;
+    });
+  };
+
   const handleAnswerSelect = (answer) => {
     setSelectedAnswer(answer);
   };
@@ -70,10 +121,10 @@ const App = () => {
             {answeredQuestions.map((q, index) => (
               <div key={q.question_number} className={`result-item ${q.isCorrect ? 'correct' : 'incorrect'}`}>
                 <h4>問題 {q.question_number}: {q.isCorrect ? '正解' : '不正解'}</h4>
-                <p><strong>問題:</strong> {q.question_text}</p>
-                <p><strong>あなたの回答:</strong> {q.userAnswer} - {q.options[q.userAnswer]}</p>
-                <p><strong>正解:</strong> {q.correct_answer} - {q.options[q.correct_answer]}</p>
-                <p><strong>解説:</strong> {q.explanation}</p>
+                <p><strong>問題:</strong> {renderMarkdown(q.question_text)}</p>
+                <p><strong>あなたの回答:</strong> {q.userAnswer} - {renderMarkdown(q.options[q.userAnswer])}</p>
+                <p><strong>正解:</strong> {q.correct_answer} - {renderMarkdown(q.options[q.correct_answer])}</p>
+                <p><strong>解説:</strong> {renderMarkdown(q.explanation)}</p>
               </div>
             ))}
           </div>
@@ -101,7 +152,7 @@ const App = () => {
 
         <div className="question-section">
           <h2>問題 {currentQuestion.question_number}</h2>
-          <p className="question-text">{currentQuestion.question_text}</p>
+          <p className="question-text">{renderMarkdown(currentQuestion.question_text)}</p>
 
           <div className="options">
             {Object.entries(currentQuestion.options).map(([key, value]) => (
@@ -115,7 +166,9 @@ const App = () => {
                   disabled={showResult}
                 />
                 <span className="option-letter">{key}</span>
-                <span className="option-text">{value}</span>
+                <span className="option-text">
+                  {renderMarkdown(value)}
+                </span>
               </label>
             ))}
           </div>
@@ -136,12 +189,12 @@ const App = () => {
                 ) : (
                   <div>
                     <h3 className="result-title">❌ 不正解です</h3>
-                    <p>正解は: <strong>{currentQuestion.correct_answer} - {currentQuestion.options[currentQuestion.correct_answer]}</strong></p>
+                    <p>正解は: <strong>{currentQuestion.correct_answer} - {renderMarkdown(currentQuestion.options[currentQuestion.correct_answer])}</strong></p>
                   </div>
                 )}
                 <div className="explanation">
                   <h4>解説:</h4>
-                  <p>{currentQuestion.explanation}</p>
+                  <p>{renderMarkdown(currentQuestion.explanation)}</p>
                 </div>
               </div>
               <button className="next-btn" onClick={handleNext}>
