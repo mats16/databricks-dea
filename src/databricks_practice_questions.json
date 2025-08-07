@@ -1,0 +1,594 @@
+{
+  "title": "Databricks認定データエンジニアアソシエイト 練習問題",
+  "sources": [
+    "https://qiita.com/kohei-arai/items/5b54a89cbaec801f1972",
+    "https://zenn.dev/m_ando_abc/articles/dc9a6d4ee91d06"
+  ],
+  "questions": [
+    {
+      "question_number": 1,
+      "question_text": "次のうち、従来のデータウェアハウスにはないデータレイクハウスの利点を説明するものはどれですか。",
+      "options": {
+        "A": "データレイクハウスは、リレーショナルシステムによるデータ管理を行う",
+        "B": "データレイクハウスは、バージョン管理のためにデータのスナップショットを取得する",
+        "C": "データレイクハウスは、完全な制御を実現するためにストレージとコンピュートを密結合する",
+        "D": "データレイクハウスは、データ蓄積のために占有技術であるストレージフォーマットを利用する",
+        "E": "データレイクハウスは、バッチ解析とストリーミング解析の両方を可能する"
+      },
+      "correct_answer": "E",
+      "explanation": "Databricksのレイクハウスプラットフォームでは従来のDWHのようなバッチ処理に加えてストリーミングも一つのプラットフォーム上で処理できます。"
+    },
+    {
+      "question_number": 2,
+      "question_text": "Databricksが管理するクラスタのドライバノードとワーカーノードをホストする場所は、次のうちどれですか？",
+      "options": {
+        "A": "データプレーン",
+        "B": "コントロールプレーン",
+        "C": "Databricks ファイルシステム",
+        "D": "JDBC データソース",
+        "E": "Databricks ウェブアプリケーション"
+      },
+      "correct_answer": "A",
+      "explanation": "コンピューティングリソースであるSparkクラスタのドライバーノードとワーカーノードはそれぞれデータプレーン（各クラウドプロバイダー内）に存在します。"
+    },
+    {
+      "question_number": 3,
+      "question_text": "あるデータアーキテクトは、動画を使った機械学習と監査に対応したバッチETL/ELTの両方に対応するアーキテクチャを設計しています。次のうち、データレイクハウスが両方のワークロードのニーズを満たす理由について説明しているものはどれですか？",
+      "options": {
+        "A": "データレイクハウスは、データモデリングをほとんど必要としない。",
+        "B": "データレイクハウスは、シンプルなガバナンスのためにコンピュートとストレージを組み合わせている。",
+        "C": "データレイクハウスは、コンピュートクラスタのオートスケーリングを提供する。",
+        "D": "データレイクハウスは、非構造化データを格納し、ACIDに準拠しています。",
+        "E": "データレイクハウスは、完全にクラウドに存在します。"
+      },
+      "correct_answer": "D",
+      "explanation": "Delta Lakeは構造化データに加えて動画や画像などの非構造化データにも対応しており、また信頼性を高めるためにACID準拠しています。"
+    },
+    {
+      "question_number": 4,
+      "question_text": "次のうち、データエンジニアが汎用クラスタではなくジョブクラスタを使用したいと思うシナリオはどれですか？",
+      "options": {
+        "A": "計算コストを最小限に抑えながら、アドホック分析レポートを作成する必要がある。",
+        "B": "データチームが共同で機械学習モデルを開発する必要がある。",
+        "C": "自動化されたワークフローを30分ごとに実行する必要がある。",
+        "D": "上長への報告のためにDatabricksのSQLクエリをスケジュール実行する必要がある。",
+        "E": "データエンジニアは、手動で本番エラーを調査する必要があります。"
+      },
+      "correct_answer": "C",
+      "explanation": "ジョブクラスタは自動化されたジョブを高速・セキュアに実行するために使用されます。"
+    },
+    {
+      "question_number": 5,
+      "question_text": "データエンジニアは、データパイプラインの一部としてDeltaテーブルを作成しました。そのテーブルを利用するデータアナリストはDelta テーブルの SELECT 権限を必要とします。データエンジニアがDeltaテーブルの所有者であると仮定した場合、どの部分を使用すれば適切なアクセス権を付与することができますか？",
+      "options": {
+        "A": "リポジトリ",
+        "B": "ジョブ",
+        "C": "データエクスプローラー",
+        "D": "Databricks ファイルシステム（DBFS）",
+        "E": "ダッシュボード"
+      },
+      "correct_answer": "C",
+      "explanation": "データエクスプローラーにはテーブルやスキーマの確認に加えて、権限を付与する機能が存在します。"
+    },
+    {
+      "question_number": 6,
+      "question_text": "若手データエンジニア二人が、データパイプラインに用いる一つのノートブックの別々の部分を編集しています。二人は別々の Git ブランチで作業しているので、同じノートブックで同時にペアプログラミングを行うことができます。Databricks の経験豊富なシニアデータエンジニアが、このようなコラボレーションには、より良い代替手段があることを示唆しています。次のうち、シニアデータエンジニアの主張をサポートするものはどれですか？",
+      "options": {
+        "A": "Databricks Notebooksは、自動的な変更追跡とバージョン管理をサポートしています。",
+        "B": "Databricks Notebooksは、1つのノートブック上でリアルタイムの共同執筆をサポートします。",
+        "C": "Databricks Notebooks は、コメントと通知コメントをサポートしています。",
+        "D": "Databricks Notebooksは、同じノートブックでの複数言語の使用をサポートしています。",
+        "E": "Databricks Notebooks では、インタラクティブなデータ可視化の作成がサポートされています。"
+      },
+      "correct_answer": "B",
+      "explanation": "URLを共有すると同じノートブック上でリアルタイムに編集可能です。"
+    },
+    {
+      "question_number": 7,
+      "question_text": "Databricks ReposがDatabricks Lakehouse Platform上でCI/CDワークフローを促進する方法について説明しているのは次のうちどれでしょうか？",
+      "options": {
+        "A": "リポジトリは、プルリクエスト、レビュー、およびブランチのマージ前の承認プロセスを促進することができます。",
+        "B": "リポジトリは、セカンダリ Git ブランチの変更をメイン Git ブランチにマージすることができます。",
+        "C": "リポジトリを使って、Git の自動化パイプラインを設計、開発、起動することができます。",
+        "D": "リポジトリは、単一の真実である Git リポジトリを保存することができます。",
+        "E": "リポジトリは、CI/CD プロセスを起動するために、コードの変更をコミットまたはプッシュすることができます。"
+      },
+      "correct_answer": "E",
+      "explanation": "Databricks Repos はCI/CD プロセスを起動するために、コードの変更をコミットまたはプッシュすることができます。"
+    },
+    {
+      "question_number": 8,
+      "question_text": "デルタレイクを説明した文章は次のうちどれでしょう？",
+      "options": {
+        "A": "Delta Lakeは、ビッグデータのワークロードに使用されるオープンソースの分析エンジンです。",
+        "B": "Delta Lakeは、信頼性、セキュリティ、パフォーマンスを提供するオープンフォーマットのストレージレイヤーです。",
+        "C": "Delta Lakeは、完全な機械学習のライフサイクルを管理するためのオープンソースプラットフォームです。",
+        "D": "Delta Lakeは、分散データのためのオープンソースのデータストレージフォーマットです。",
+        "E": "Delta Lakeは、データを処理するオープンフォーマットのストレージレイヤーです。"
+      },
+      "correct_answer": "B",
+      "explanation": "Delta Lakeは信頼性、セキュリティ、パフォーマンスを提供するオープンフォーマットのストレージレイヤーです。"
+    },
+    {
+      "question_number": 9,
+      "question_text": "あるデータアーキテクトは、次のような形式の表が必要であると判断した。この名前のテーブルがすでに存在するかどうかにかかわらず、上記の形式で空のDelta テーブルを上記のフォーマットで作成するためには次のコードブロックのどれが適切か。",
+      "options": {
+        "A": "CREATE OR REPLACE TABLE table_name AS SELECT id STRING, birthDate DATE, avgRating FLOAT USING DELTA",
+        "B": "CREATE OR REPLACE TABLE table_name (id STRING, birthDate DATE, avgRating FLOAT)",
+        "C": "CREATE TABLE IF NOT EXISTS table_name (id STRING, birthDate DATE, avgRating FLOAT)",
+        "D": "CREATE TABLE table_name AS SELECT id STRING, birthDate DATE, avgRating FLOAT",
+        "E": "CREATE OR REPLACE TABLE table_name WITH COLUMNS ( id STRING, birthDate DATE, avgRating FLOAT) USING DELTA"
+      },
+      "correct_answer": "B",
+      "explanation": "CREATE OR REPLACE TABLEを使用することで、既存のテーブルがあっても新しいテーブルを作成できます。"
+    },
+    {
+      "question_number": 10,
+      "question_text": "次のSQLキーワードのうち、既存のDeltaテーブルに新しい行を追加するために使用できるのはどれですか？",
+      "options": {
+        "A": "UPDATE",
+        "B": "COPY",
+        "C": "INSERT INTO",
+        "D": "DELETE",
+        "E": "UNION"
+      },
+      "correct_answer": "C",
+      "explanation": "INSERT INTOは既存のテーブルに新しい行を追加するためのSQLコマンドです。"
+    },
+    {
+      "question_number": 11,
+      "question_text": "データエンジニアリングチームはDelta テーブルから同じ条件を満たす行を抽出する必要があります。しかし、クエリの実行速度が遅いことに気づき、データファイルのサイズを調整しました。調査した結果、条件を満たす行は各ファイルにまばらに配置されていることがわかりました。次の最適化手法のうち、どれがクエリを高速化できるでしょうか。",
+      "options": {
+        "A": "データスキッピング",
+        "B": "Z-Order",
+        "C": "ビンパッキング",
+        "D": "パーケット形式で書き込み",
+        "E": "ファイルサイズの調整"
+      },
+      "correct_answer": "B",
+      "explanation": "Z-Orderコマンドを使用することで、カラム内で同じデータを物理的にまとめて配置し、より効率的なデータスキッピングでI/O効率を向上させることができます。"
+    },
+    {
+      "question_number": 12,
+      "question_text": "データエンジニアが customer360 というデータベースを /customer/customer360 という場所に作成する必要があります。データエンジニアは、同僚の1人がすでにデータベースを作成しているかどうかわからない。データエンジニアは、このタスクを完了するために次のどのコマンドを実行する必要がありますか？",
+      "options": {
+        "A": "CREATE DATABASE customer360 LOCATION '/customer/customer360';",
+        "B": "CREATE DATABASE IF NOT EXISTS customer360;",
+        "C": "CREATE DATABASE IF NOT EXISTS customer360 LOCATION '/customer/customer360'",
+        "D": "CREATE DATABASE IF NOT EXISTS customer360 DELTA LOCATION '/customer/customer360'",
+        "E": "CREATE DATABASE customer360 DELTA LOCATION '/customer/customer360';"
+      },
+      "correct_answer": "C",
+      "explanation": "IF NOT EXISTSを使用することで既存のデータベースがある場合はエラーを回避でき、LOCATIONを指定することでデータの格納場所を指定できます。"
+    },
+    {
+      "question_number": 13,
+      "question_text": "ジュニアデータエンジニアは、Sparkがデータとメタデータの両方を管理するSpark SQLテーブルmy_tableを作成する必要があります。メタデータとデータはDatabricks Filesystem (DBFS)に保存される必要があります。このタスクを完了するために、シニアデータエンジニアがジュニアデータエンジニアと共有すべきコマンドは次のうちどれですか？",
+      "options": {
+        "A": "CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"storage-path\")",
+        "B": "CREATE MANAGED TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"storage-path\")",
+        "C": "CREATE MANAGED TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet",
+        "D": "CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet OPTIONS (PATH \"dbfs:///storage-path\")",
+        "E": "CREATE TABLE my_table (id STRING, value STRING) USING org.apache.spark.sql.parquet"
+      },
+      "correct_answer": "E",
+      "explanation": "デフォルトでManagedテーブルが作成され、データとメタデータの両方をDatabricksが管理します。"
+    },
+    {
+      "question_number": 14,
+      "question_text": "あるデータエンジニアが、2つのテーブルからデータを取り出してリレーショナルオブジェクトを作成したいと考えています。このリレーショナル・オブジェクトは、他のセッションで他のデータ・エンジニアが使用する必要があります。ストレージのコストを削減するために、データエンジニアは物理データのコピーと保存を避けたいと考えています。データエンジニアは次のどのリレーショナルオブジェクトを作成する必要がありますか？",
+      "options": {
+        "A": "ビュー",
+        "B": "テンポラリービュー",
+        "C": "デルタテーブル",
+        "D": "データベース",
+        "E": "SparkSQLテーブル"
+      },
+      "correct_answer": "A",
+      "explanation": "ビューは物理データを持たず、セッションが切れても削除されないため、他のセッションでも利用可能です。"
+    },
+    {
+      "question_number": 15,
+      "question_text": "あるデータエンジニアリングチームが、外部システムに保存されている Parquet データを使用して、一連のテーブルを作成しました。このチームは、外部システムのデータに新しい行を追加した後、Databricks のクエリで新しい行が返されないことに気づきました。彼らは、この問題の原因として、以前のデータのキャッシュを特定します。次のどのアプローチが、クエリによって返されるデータが常に最新であることを保証しますか？",
+      "options": {
+        "A": "テーブルをDelta形式に変換する必要があります。",
+        "B": "テーブルをクラウドベースの外部システムに保存する必要があります。",
+        "C": "テーブルは、次のクエリを実行する前に、書き込みクラスタ内でリフレッシュされるべきです。",
+        "D": "テーブルは、キャッシュしないようにメタデータを含むように変更する必要があります。",
+        "E": "次のクエリを実行する前にテーブルを更新する必要があります。"
+      },
+      "correct_answer": "A",
+      "explanation": "Delta形式に変更することで、データソースに変更を施した際のACIDトランザクションが適用されます。"
+    },
+    {
+      "question_number": 16,
+      "question_text": "customerLocations テーブルは以下のスキーマで存在します。id STRING, date STRING, city STRING, country STRING。シニアデータエンジニアは、このテーブルから次のコマンドを使用して新しいテーブルを作成することを望んでいます。CREATE TABLE customersPerCountry AS SELECT country, COUNT(*) AS customers FROM customerLocations GROUP BY country; ジュニアデータエンジニアが、新しいテーブルに対してスキーマを宣言しない理由を尋ねました。次の回答のうち、スキーマの宣言が必要ない理由を説明するものはどれですか？",
+      "options": {
+        "A": "CREATE TABLE AS SELECTステートメントは、ソーステーブルからスキーマの詳細を採用する",
+        "B": "CREATE TABLE AS SELECT文は、データをスキャンすることによってスキーマを推測します。",
+        "C": "CREATE TABLE AS SELECT ステートメントは、スキーマがオプションであるテーブルを生成します。",
+        "D": "CREATE TABLE AS SELECT文は、すべての列にSTRING型を割り当てます。",
+        "E": "CREATE TABLE AS SELECT ステートメントは、スキーマをサポートしないテーブルをもたらします。"
+      },
+      "correct_answer": "A",
+      "explanation": "CREATE TABLE AS SELECT（CTAS）ステートメントはソーステーブルのスキーマ情報を採用してテーブルを作成します。"
+    },
+    {
+      "question_number": 17,
+      "question_text": "あるデータエンジニアは、テーブルを削除し、テーブルを再作成することによって、テーブルのデータを上書きしています。別のデータエンジニアは、これは非効率的であり、テーブルを単純に上書きするべきだと提案します。テーブルを削除して再作成する代わりに、テーブルを上書きする次の理由のうちどれが正しくないですか？",
+      "options": {
+        "A": "テーブルの上書きは、ファイルを削除する必要がないため、効率的です。",
+        "B": "テーブルを上書きすると、ロギングと監査用にテーブルの履歴がきれいになる。",
+        "C": "テーブルの上書きは、タイムトラベルのために古いバージョンのテーブルを維持します。",
+        "D": "テーブルの上書きはアトミックな操作であり、テーブルを未完成の状態にすることはない。",
+        "E": "テーブルの上書きを実施している際に、同時進行のクエリが完了させることができます。"
+      },
+      "correct_answer": "B",
+      "explanation": "Delta Formatのテーブルを上書きしてもテーブルのトランザクション履歴は削除されずに保持されます。"
+    },
+    {
+      "question_number": 18,
+      "question_text": "次のコマンドのどれが、既存のDeltaテーブルmy_tableから重複削除されたレコードを返すか？",
+      "options": {
+        "A": "DROP DUPLICATES FROM my_table;",
+        "B": "SELECT * FROM my_table WHERE duplicate = False;",
+        "C": "SELECT DISTINCT * FROM my_table;",
+        "D": "MERGE INTO my_table a USING new_records b ON a.id = b.id WHEN NOT MATCHED THEN INSERT *;",
+        "E": "MERGE INTO my_table a USING new_records b;"
+      },
+      "correct_answer": "C",
+      "explanation": "SELECT DISTINCT句を使うと重複レコードが削除されます。"
+    },
+    {
+      "question_number": 19,
+      "question_text": "あるデータエンジニアが、クエリの一部として2つのテーブルを水平に結合させたいと考えている。彼らは共有カラムをキーカラムとして使用し、キーカラムの値が両方のテーブルに存在する行だけをクエリ結果に含めたいと考えています。このタスクを達成するために、次のSQLコマンドのうちどれを使用することができますか？",
+      "options": {
+        "A": "INNER JOIN",
+        "B": "OUTER JOIN",
+        "C": "LEFT JOIN",
+        "D": "MERGE",
+        "E": "UNION"
+      },
+      "correct_answer": "A",
+      "explanation": "INNER JOINは共有カラムをキーとして使用し、両方のテーブルに存在する行のみを結果に含めます。"
+    },
+    {
+      "question_number": 20,
+      "question_text": "ジュニアデータエンジニアは、JSONファイルを以下のスキーマを持つテーブルraw_tableにインジェストしました。cart_id STRING, items ARRAY [item_id:STRING]。ジュニア・データ・エンジニアは、raw_table の items カラムをアンネストして、以下のスキーマを持つ新しいテーブルを作成したいと考えています。cart_id STRING, item_id STRING。このタスクを完了するために、ジュニアデータエンジニアは次のどのコマンドを実行する必要がありますか？",
+      "options": {
+        "A": "SELECT cart_id, filter(items) AS item_id FROM raw_table;",
+        "B": "SELECT cart_id, flatten(items) AS item_id FROM raw_table;",
+        "C": "SELECT cart_id, reduce(items) AS item_id FROM raw_table;",
+        "D": "SELECT cart_id, explode(items) AS item_id FROM raw_table;",
+        "E": "SELECT cart_id, slice(items) AS item_id FROM raw_table;"
+      },
+      "correct_answer": "D",
+      "explanation": "explodeはARRAY/MAPのような入れ子構造のデータを展開して値を列にする際に使用します。"
+    },
+    {
+      "question_number": 21,
+      "question_text": "ジュニアデータエンジニアは、JSONファイルを以下のスキーマを持つテーブルraw_tableにインジェストしました。transaction_id STRING, payload ARRAY [customer_id:STRING, date:TIMESTAMP, store_id:STRING]。データエンジニアは、各トランザクションの日付を以下のスキーマのテーブルに効率的に抽出したいと考えています。transaction_id STRING, date TIMESTAMP。このタスクを完了するために、データエンジニアは次のどのコマンドを実行する必要がありますか？",
+      "options": {
+        "A": "SELECT transaction_id, explode(payload) FROM raw_table;",
+        "B": "SELECT transaction_id, payload.date FROM raw_table;",
+        "C": "SELECT transaction_id, date FROM raw_table;",
+        "D": "SELECT transaction_id, payload[date] FROM raw_table;",
+        "E": "SELECT transaction_id, date from payload FROM raw_table;"
+      },
+      "correct_answer": "B",
+      "explanation": "Arrayの値を取得するためにはArray.Elementで取得します。"
+    },
+    {
+      "question_number": 22,
+      "question_text": "あるデータアナリストが、データエンジニアリングチームに以下のSpark SQLクエリを提供しました。SELECT district, avg(sales) FROM store_sales_20220101 GROUP BY district; データアナリストは、データエンジニアリングチームが毎日このクエリを実行することを希望しています。テーブル名の末尾にある日付（20220101）は、クエリを実行するたびに、自動的に現在の日付に置き換えられる必要があります。このプロセスを効率的に自動化するために、データエンジニアリングチームが使用できるアプローチはどれか？",
+      "options": {
+        "A": "PySpark を使ってクエリをラップし、Python の文字列変数システムを使って、テーブル名を自動的に更新することができます。",
+        "B": "テーブル名の中の日付を、手動で現在の日付に置き換えることができる。",
+        "C": "データアナリストに、クエリの実行頻度を減らすように書き換えるよう依頼することができる。",
+        "D": "テーブルの文字列形式の日付をタイムスタンプ形式の日付に置き換えることができる。",
+        "E": "PySpark にテーブルを渡して、既存のクエリに対して堅牢にテストされたモジュールを開発することができます。"
+      },
+      "correct_answer": "A",
+      "explanation": "Pythonの変数を使うことでテーブル名を自動で変換することができます。"
+    },
+    {
+      "question_number": 23,
+      "question_text": "あるデータエンジニアが、外部ソースからPySpark DataFrame raw_dfにデータを取り込みました。彼らは、データアナリストがデータの品質保証チェックを行うために、このデータをSQLで簡単に利用できるようにする必要があります。データエンジニアは、Sparkセッションの残りの時間だけこのデータをSQLで利用できるようにするために、次のどのコマンドを実行する必要がありますか？",
+      "options": {
+        "A": "raw_df.createOrReplaceTempView(\"raw_df\")を実行します。",
+        "B": "raw_df.createTable(\"raw_df\")を実行します。",
+        "C": "raw_df.write.save(\"raw_df\")を実行します。",
+        "D": "raw_df.saveAsTable(\"raw_df\")。",
+        "E": "PySpark と SQL の間でデータを共有する方法はありません。"
+      },
+      "correct_answer": "A",
+      "explanation": "Temp ViewはSparkセッションの間のみ有効です。"
+    },
+    {
+      "question_number": 24,
+      "question_text": "データエンジニアは、3つのPython変数：region、store、yearを使用して、動的にテーブル名文字列を作成する必要があります。region = \"nyc\"、store = \"100\"、year = \"2021\"の場合のテーブル名の例はnyc100_sales_2021です。データエンジニアがPythonでテーブル名を構築するために使用すべきコマンドは次のうちどれですか？",
+      "options": {
+        "A": "\"{region}+{store}+_sales_+{year}\"",
+        "B": "f\"{region}+{store}+_sales_+{year}\"",
+        "C": "\"{region}{store}_sales_{year}\"",
+        "D": "f\"{region}{store}_sales_{year}\"",
+        "E": "python{region}+{store}+\"_sales_\"+{year}"
+      },
+      "correct_answer": "D",
+      "explanation": "Pythonではf文字列を使うと変数を文字列に組み込むことができます。"
+    },
+    {
+      "question_number": 25,
+      "question_text": "データエンジニアは、データソース上のストリーミング読み取りを実行するためのコードブロックを開発しました。コードブロックは以下のとおりです。(spark .read .schema(schema) .format(\"cloudFiles\") .option(\"cloudFiles.format\", \"json\") .load(dataSource))。コードブロックはエラーを返しています。ストリーミング読み取りを正常に実行するようにブロックを構成するために、以下のうちどの変更を行う必要がありますか？",
+      "options": {
+        "A": ".read行を .readStreamに置き換える必要がある。",
+        "B": ".read行の後に新しい .stream 行を追加する必要がある。",
+        "C": ".format(\"cloudFiles\") 行を .format(\"stream\") に置き換える必要がある。",
+        "D": "sparkの後に新しい .stream 行を追加する必要がある。",
+        "E": ".load(dataSource) 行の後に新しい .stream 行を追加する必要がある。"
+      },
+      "correct_answer": "A",
+      "explanation": "ストリーミング処理を行う際は、readStreamを使用します。"
+    },
+    {
+      "question_number": 26,
+      "question_text": "データエンジニアは、構造化ストリーミングジョブを構成して、テーブルから読み取り、データを操作し、新しいテーブルにストリーミング書き込みを実行するようにしました。データエンジニアが使用するコード ブロックは次のとおりです：(spark.table(\"sales\") .withColumn(\"avg_price\", col(\"sales\") / col(\"units\")) .writeStream .option(\"checkpointLocation\", checkpointPath) .outputMode(\"complete\") ._____ .table(\"new_sales\"))。データエンジニアが、クエリに1つのマイクロバッチを実行させて、利用可能なすべてのデータを処理させたいだけであれば、次のコードのうちどれを実行すればよいでしょうか。",
+      "options": {
+        "A": "trigger(once=True)",
+        "B": "trigger(continuous=\"once\")",
+        "C": "processingTime(\"once\")",
+        "D": "trigger(processingTime=\"once\")",
+        "E": "processingTime(1)"
+      },
+      "correct_answer": "A",
+      "explanation": "利用可能な全てのデータを処理する際にはtrigger(once=True)を使います。"
+    },
+    {
+      "question_number": 27,
+      "question_text": "データエンジニアがデータパイプラインを設計しています。ソースシステムは共有ディレクトリにファイルを生成し、他のプロセスも同じディレクトリを使用しています。その結果、ファイルはそのままに保持され、ディレクトリに蓄積されます。データエンジニアは、前回のパイプライン実行以降に新しく生成されたファイルを特定し、各実行でそれらの新しいファイルのみを取り込むようにパイプラインを設定する必要があります。この問題を解決するためにデータエンジニアが使用できるツールは次のうちどれでしょうか？",
+      "options": {
+        "A": "Databricks SQL",
+        "B": "Delta Lake",
+        "C": "Unity Catalog",
+        "D": "Data Explorer",
+        "E": "Auto Loader"
+      },
+      "correct_answer": "E",
+      "explanation": "AutoLoaderを設定すると、新しいデータファイルがクラウドストレージに到着した際に、追加設定なしで処理することができます。"
+    },
+    {
+      "question_number": 28,
+      "question_text": "データエンジニアリングチームは、既存のデータパイプラインを変換して、JSONファイルの取り込みにAuto Loaderを利用するプロセスにあります。あるデータエンジニアは、Auto Loaderのドキュメントで以下のコードブロックを見つけました：(streaming_df = spark.readStream.format(\"cloudFiles\") .option(\"cloudFiles.format\", \"json\") .option(\"cloudFiles.schemaLocation\", schemaLocation) .load(sourcePath))。",
+      "options": {
+        "A": "データエンジニアは、format(\"cloudFiles\")の行をformat(\"autoLoader\")に変更する必要があります。",
+        "B": "変更は必要ありません。Databricksは自動的にストリーミング読み取りにAuto Loaderを使用します。",
+        "C": "変更は必要ありません。format(\"cloudFiles\")の含まれていることにより、Auto Loaderが使用可能になります。",
+        "D": "データエンジニアは、.autoLoader行を.load(sourcePath)の前に追加する必要があります。",
+        "E": "変更は必要ありません。データエンジニアは、Auto Loaderを有効にするように管理者に依頼する必要があります。"
+      },
+      "correct_answer": "C",
+      "explanation": "AutoLoaderの設定にはformat(\"cloudFiles\")を指定するだけです。"
+    },
+    {
+      "question_number": 29,
+      "question_text": "次のデータワークロードのうち、Bronzeテーブルをそのソースとして使用するものはどれですか？",
+      "options": {
+        "A": "クリーンデータを集計して標準のサマリー統計を作成するジョブ",
+        "B": "集計されたデータをクエリしてダッシュボードに主要な洞察を公開するジョブ",
+        "C": "ストリーミングソースから生データをLakehouseに取り込むジョブ",
+        "D": "機械学習アプリケーションのための特徴セットを開発するジョブ",
+        "E": "タイムスタンプを人間が読み取り可能な形式に解析してデータを豊かにするジョブ"
+      },
+      "correct_answer": "E",
+      "explanation": "BronzeテーブルをソースとするSilverテーブルの記載です。"
+    },
+    {
+      "question_number": 30,
+      "question_text": "次のデータワークロードのうち、Silverテーブルをそのソースとして使用するものはどれですか？",
+      "options": {
+        "A": "タイムスタンプを人間が読み取り可能な形式に解析してデータを豊かにするジョブ",
+        "B": "既にダッシュボードにフィードされている集計データをクエリするジョブ",
+        "C": "ストリーミングソースから生データをLakehouseに取り込むジョブ",
+        "D": "クリーンデータを集計して標準のサマリー統計を作成するジョブ",
+        "E": "異常な形式のレコードを削除することでデータをクリーンにするジョブ"
+      },
+      "correct_answer": "D",
+      "explanation": "SilverテーブルをソースとするGoldテーブルの記載です。"
+    },
+    {
+      "question_number": 31,
+      "question_text": "以下の構造化ストリーミングクエリーのうち、どれがBronzeテーブルからSilverテーブルへデータ移動をしていますか？",
+      "options": {
+        "A": "(spark.table(\"sales\").groupBy(\"store\").agg(sum(\"sales\")).writeStream.option(\"checkpointLocation\", checkpointPath).outputMode(\"complete\").table(\"aggregatedSales\"))",
+        "B": "(spark.table(\"sales\").agg(sum(\"sales\"), sum(\"units\")).writeStream.option(\"checkpointLocation\", checkpointPath).outputMode(\"complete\").table(\"aggregatedSales\"))",
+        "C": "(spark.table(\"sales\").withColumn(\"avgPrice\", col(\"sales\") / col(\"units\")).writeStream.option(\"checkpointLocation\", checkpointPath).outputMode(\"append\").table(\"cleanedSales\"))",
+        "D": "(spark.readStream.load(rawSalesLocation).writeStream.option(\"checkpointLocation\", checkpointPath).outputMode(\"append\").table(\"uncleanedSales\"))",
+        "E": "(spark.read.load(rawSalesLocation).writeStream.option(\"checkpointLocation\", checkpointPath).outputMode(\"append\").table(\"uncleanedSales\"))"
+      },
+      "correct_answer": "C",
+      "explanation": "既存のテーブル（Bronzeテーブル）からデータを読み込み、withColumnを使って新しい列を追加し、cleanedSalesという新しいテーブル（Silverテーブル）に書き出しています。"
+    },
+    {
+      "question_number": 32,
+      "question_text": "Delta Live Tablesは、Databricks上のSparkとDelta Lakeを利用する標準的なデータパイプラインと比較して、ELTパイプラインに提供する利点は以下のどれですか？",
+      "options": {
+        "A": "データテーブルの依存関係を宣言し、維持する機能",
+        "B": "PythonやSQLでパイプラインを書く機能",
+        "C": "以前のバージョンのデータテーブルにアクセスする機能",
+        "D": "コンピュートリソースを自動的にスケールする機能",
+        "E": "選択肢なし"
+      },
+      "correct_answer": "A",
+      "explanation": "DLTの特有の利点は、データテーブルの依存関係を宣言し維持する機能です。パイプラインの管理が簡素化され、データの信頼性が向上します。"
+    },
+    {
+      "question_number": 33,
+      "question_text": "あるデータエンジニアがELTパイプラインに3つのノートブックを持っています。パイプラインが正常に完了するためには、ノートブックを特定の順序で実行する必要があります。データエンジニアは、このプロセスを管理するためにDelta Live Tablesを使用したいと考えています。データエンジニアは、Delta Live Tablesを使用してこのパイプラインを実装するために、次のどの手順を実行する必要がありますか？",
+      "options": {
+        "A": "データページから Delta Live Tablesパイプラインを作成する必要があります。",
+        "B": "ジョブページから Delta Live Tablesパイプラインを作成する必要があります。",
+        "C": "コンピュートページからDelta Live Tablesパイプラインを作成する必要があります。",
+        "D": "ノートブックをPythonとdltライブラリを使用するようにリファクタリングする必要があります。",
+        "E": "ノートブックをSQLとCREATE LIVE TABLEキーワードを使用するようにリファクタリングする必要があります。"
+      },
+      "correct_answer": "B",
+      "explanation": "Delta Live Tablesパイプラインはジョブページから作成します。"
+    },
+    {
+      "question_number": 34,
+      "question_text": "あるデータエンジニアが次のようなクエリーを書きました。SELECT * FROM json.`/path/to/json/file.json`; データエンジニアは同僚に、このクエリをDelta Live Tables (DLT)パイプラインで使用するために変換する方法を尋ねました。このクエリはDLTパイプラインで最初のテーブルを作成する必要があります。次のうち、同僚がクエリに加える必要がある変更はどれですか？",
+      "options": {
+        "A": "クエリの先頭に COMMENT 行を追加する必要があります。",
+        "B": "クエリの先頭に CREATE LIVE TABLE table_name AS 行を追加する必要があります。",
+        "C": "FROM行にjson.の前にlive.接頭辞を追加する必要があります。",
+        "D": "クエリの先頭に CREATE DELTA LIVE TABLE table_name AS 行を追加する必要があります。",
+        "E": "JSONファイルのパスにcloud_files(...)ラッパーを追加する必要があります。"
+      },
+      "correct_answer": "B",
+      "explanation": "DLTパイプラインでテーブルを作成するには、CREATE LIVE TABLE構文を使用します。現在は CREATE OR REFRESH MATERIALIZED VIEW が推奨されています。"
+    },
+    {
+      "question_number": 35,
+      "question_text": "Delta Live Tablesを使用して定義されたデータセットがあり、EXPECT句が含まれています：CONSTRAINT valid_timestamp EXPECT (timestamp > '2020-01-01')。これらの制約に違反するデータを含むバッチが処理された場合、どのような動作が期待されますか？",
+      "options": {
+        "A": "制約に違反するレコードはターゲットデータセットに追加され、イベントログに無効として記録されます。",
+        "B": "制約に違反するレコードはターゲットデータセットから削除され、イベントログに無効として記録されます。",
+        "C": "制約に違反するレコードがあるとジョブが失敗します。",
+        "D": "制約に違反するレコードはターゲットデータセットに追加され、ターゲットデータセットに追加されたフィールドで無効としてフラグが立てられます。",
+        "E": "制約に違反するレコードはターゲットデータセットから削除され、隔離テーブルにロードされます。"
+      },
+      "correct_answer": "A",
+      "explanation": "既定のwarnアクションでは、制約に違反するレコードはターゲットデータセットに追加され、イベントログに無効として記録されます。"
+    },
+    {
+      "question_number": 36,
+      "question_text": "Delta Live Tableパイプラインには、STREAMING LIVE TABLEを使用して定義された2つのデータセットが含まれています。3つのデータセットは、LIVE TABLEを使用してDelta Lakeテーブルソースに対して定義されています。このテーブルは、トリガーパイプラインモードを使用して開発モードで実行するように構成されています。未処理のデータが存在し、すべての定義が有効であると仮定すると、パイプラインを更新するために「開始」をクリックした後の予想される結果は何ですか？",
+      "options": {
+        "A": "すべてのデータセットが一度更新され、パイプラインは停止します。コンピューティングリソースは終了します。",
+        "B": "パイプラインが停止されるまで、すべてのデータセットが一定間隔で更新されます。",
+        "C": "すべてのデータセットが一定間隔で更新され、パイプラインが停止するまで続きます。コンピューティングリソースはパイプラインが停止した後も追加のテストのために持続します。",
+        "D": "すべてのデータセットが一度更新され、パイプラインは停止します。コンピューティングリソースは追加のテストのために持続します。",
+        "E": "すべてのデータセットが継続的に更新され、パイプラインは停止しません。コンピューティングリソースはパイプラインと共に持続します。"
+      },
+      "correct_answer": "D",
+      "explanation": "トリガーパイプラインモードでは一度の実行で停止し、開発モードではコンピュートリソースは追加のテストのために持続します。"
+    },
+    {
+      "question_number": 37,
+      "question_text": "あるデータエンジニアが毎晩実行される複数のタスクを持つジョブを持っています。タスクの1つが予期せず10％の実行で失敗します。ジョブが毎晩完了することを保証しながら、計算コストを最小限に抑えるためにデータエンジニアが実行できるアクションはどれですか？",
+      "options": {
+        "A": "ジョブ全体の再試行ポリシーを設定する",
+        "B": "タスクの実行状況を観察し、失敗の原因を特定する",
+        "C": "ジョブを複数回実行するように設定し、少なくとも1回は完了するようにする",
+        "D": "定期的に失敗するタスクに再試行ポリシーを設定する",
+        "E": "ジョブ内の各タスクにジョブクラスターを利用する"
+      },
+      "correct_answer": "D",
+      "explanation": "失敗する可能性のある特定のタスクに対してのみ再試行が行われ、計算コストを最小限に抑えつつ、ジョブ全体の完了を保証できます。"
+    },
+    {
+      "question_number": 38,
+      "question_text": "データエンジニアが毎晩実行される2つのジョブを設定しました。最初のジョブは午前0時に開始し、通常は約20分で完了します。2番目のジョブは最初のジョブに依存しており、午前0時30分に開始します。時々、最初のジョブが午前0時30分までに完了しないと、2番目のジョブが失敗します。この問題を回避するために、データエンジニアが使用できるアプローチは次のうちどれですか？",
+      "options": {
+        "A": "直線的な依存関係を持つ1つのジョブで、複数のタスクを利用する",
+        "B": "クラスタプールを使用してジョブの効率的な実行を支援する",
+        "C": "最初のジョブに再試行ポリシーを設定し、ジョブの実行速度を向上させる",
+        "D": "二番目のジョブの出力サイズを制限して、失敗しにくくする",
+        "E": "最初のジョブから2番目のジョブにデータをストリームするように設定する"
+      },
+      "correct_answer": "A",
+      "explanation": "直線的な依存関係を持つことで前段のタスクが完了してから次のタスクが実行されます。"
+    },
+    {
+      "question_number": 39,
+      "question_text": "データエンジニアがノートブックをジョブとして自動処理するように設定しました。データエンジニアのマネージャーは、その複雑さのためにスケジュールをバージョン管理したいと考えています。ジョブのスケジュールのバージョン管理可能な構成を取得するために、データエンジニアが使用できるアプローチは次のうちどれですか？",
+      "options": {
+        "A": "Databricks Repoの一部であるノートブックにジョブをリンクする",
+        "B": "Jobクラスターでジョブを一度送信する",
+        "C": "ジョブのページからジョブのJSONをダウンロードする",
+        "D": "all-purposeクラスタ上でジョブを一度送信する",
+        "E": "ジョブのページからジョブのXMLをダウンロードする"
+      },
+      "correct_answer": "C",
+      "explanation": "ジョブのJSONをダウンロードすることで、ジョブの設定やスケジュールを含む構成をバージョン管理システムに保存できます。"
+    },
+    {
+      "question_number": 40,
+      "question_text": "データアナリストが、Databricks SQLクエリの実行が非常に遅いことに気付きました。この問題は、順次実行されるすべてのクエリに影響を与えていると主張しています。データエンジニアリングチームに助けを求めたところ、各クエリが同じSQLエンドポイントを使用していることが判明しましたが、そのSQLエンドポイントは他のユーザーによって使用されていません。データエンジニアリングチームは、データアナリストのクエリのレイテンシを改善するために、次のどのアプローチを使用できますか？",
+      "options": {
+        "A": "SQLエンドポイントのサーバーレス機能をオンにする",
+        "B": "SQLエンドポイントのスケーリング範囲の最大値を増やす",
+        "C": "SQL エンドポイントのクラスタサイズを大きくする",
+        "D": "SQLエンドポイントの自動停止機能をオンにする",
+        "E": "SQLエンドポイントのサーバーレス機能をオンにし、スポットインスタンスポリシーを「信頼性最適化」に変更する。"
+      },
+      "correct_answer": "C",
+      "explanation": "クラスタサイズを大きくすることで、より多くのコンピューティングリソースが利用可能になり、クエリの実行速度が向上します。"
+    },
+    {
+      "question_number": 41,
+      "question_text": "エンジニアリングマネージャーが、Databricks SQLクエリを使用して、顧客から報告されたバグに関連する修正に関するチームの進捗を監視しています。マネージャーは毎日クエリの結果を確認していますが、毎日手動でクエリを再実行し、結果を待っています。クエリの結果が毎日更新されるようにするために、マネージャーが使用できるアプローチは次のうちどれですか？",
+      "options": {
+        "A": "Jobs UIからクエリを毎日1回実行するようにスケジュールする。",
+        "B": "Databricks SQLのクエリのページからクエリを毎日1回更新するようにスケジュールする。",
+        "C": "Jobs UIからクエリを毎日12時間ごとに実行するようにスケジュールする。",
+        "D": "Databricks SQLのSQLエンドポイントのページからクエリを毎日1回更新するようにスケジュールする。",
+        "E": "Databricks SQLのSQLエンドポイントのページからクエリを毎日12時間ごとに更新するようにスケジュールする。"
+      },
+      "correct_answer": "B",
+      "explanation": "Databricks SQLのクエリページから直接スケジュールを設定することが最も適切です。"
+    },
+    {
+      "question_number": 42,
+      "question_text": "データエンジニアリングチームが、ELTジョブのパフォーマンスを監視するためにDatabricks SQLクエリを使用しています。ELTジョブは、処理する準備ができた特定の数の入力レコードによってトリガーされます。Databricks SQLクエリは、ジョブの最新の実行時からの経過時間（分）を返します。ELTジョブが1時間以内に実行されていない場合に通知を受け取るために、データエンジニアリングチームが使用できるアプローチは次のうちどれですか？",
+      "options": {
+        "A": "返された値が60より大きい場合に通知するアラートを付随するダッシュボードに設定",
+        "B": "ELTジョブが失敗したときに通知するアラートをクエリに設定",
+        "C": "ダッシュボードが60分間更新されていない場合に通知するアラートを付随するダッシュボードに設定",
+        "D": "返された値が60より大きい場合に通知するアラートをクエリに設定",
+        "E": "Databricksではこのタイプのアラート設定は不可能"
+      },
+      "correct_answer": "D",
+      "explanation": "クエリの返す値が60より大きい場合にアラートを設定することで、ジョブが1時間以内に実行されていないことを検知できます。"
+    },
+    {
+      "question_number": 43,
+      "question_text": "データエンジニアリングマネージャーが、Databricks SQLダッシュボードの各クエリが「更新」ボタンを手動でクリックすると、更新に数分かかることに気付きました。これがなぜ発生するのか興味があるため、チームメンバーがいくつかの理由を提供しています。以下の理由のうち、ダッシュボードの更新に数分かかることを説明できないものはどれですか？",
+      "options": {
+        "A": "各クエリが使用しているSQLエンドポイントの起動に数分かかる可能性があります。",
+        "B": "通常の状況下で、ダッシュボードに接続されているクエリの実行に数分かかる可能性があります。",
+        "C": "ダッシュボードに接続されているクエリは、まず新しいデータが利用可能かどうかを確認している可能性があります。",
+        "D": "ダッシュボードを更新するジョブが、プールされていないエンドポイントを使用している可能性があります。",
+        "E": "ダッシュボードに接続されているクエリが、それぞれ独自の起動されていないDatabricksクラスタに接続されている可能性があります。"
+      },
+      "correct_answer": "D",
+      "explanation": "更新ボタンを手動でクリックし更新をしていることからジョブは無関係です。"
+    },
+    {
+      "question_number": 44,
+      "question_text": "新しいデータエンジニアが会社に入社しました。このデータエンジニアは、メールアドレス new.engineer@company.com で会社のDatabricksワークスペースに追加されました。データエンジニアは、データベース retail 内のテーブル sales をクエリできる必要があります。新しいデータエンジニアは既にデータベース retail に対するUSAGE権限を付与されています。新しいデータエンジニアに適切な権限を付与するために使用するコマンドは次のうちどれですか？",
+      "options": {
+        "A": "GRANT USAGE ON TABLE sales TO new.engineer@company.com;",
+        "B": "GRANT CREATE ON TABLE sales TO new.engineer@company.com;",
+        "C": "GRANT SELECT ON TABLE sales TO new.engineer@company.com;",
+        "D": "GRANT USAGE ON TABLE new.engineer@company.com TO sales;",
+        "E": "GRANT SELECT ON TABLE new.engineer@company.com TO sales;"
+      },
+      "correct_answer": "C",
+      "explanation": "テーブルをクエリするにはSELECT権限が必要です。テーブルにはUSAGE権限は存在しません。"
+    },
+    {
+      "question_number": 45,
+      "question_text": "新しいデータエンジニア new.engineer@company.com がELTプロジェクトに割り当てられました。このデータエンジニアは、プロジェクトを完全に管理するためにテーブル sales に対する完全な権限が必要です。新しいデータエンジニアにテーブルに対する完全な権限を付与するために使用できるコマンドは次のうちどれですか？",
+      "options": {
+        "A": "GRANT ALL PRIVILEGES ON TABLE sales TO new.engineer@company.com;",
+        "B": "GRANT USAGE ON TABLE sales TO new.engineer@company.com;",
+        "C": "GRANT ALL PRIVILEGES ON TABLE new.engineer@company.com TO sales;",
+        "D": "GRANT SELECT ON TABLE sales TO new.engineer@company.com;",
+        "E": "GRANT SELECT CREATE MODIFY ON TABLE sales TO new.engineer@company.com;"
+      },
+      "correct_answer": "A",
+      "explanation": "ALL PRIVILEGESを使用することで、テーブルに対する完全な管理権限を付与できます。"
+    }
+  ]
+}
