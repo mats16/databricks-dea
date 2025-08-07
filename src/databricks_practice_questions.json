@@ -280,7 +280,7 @@
     },
     {
       "question_number": 22,
-      "question_text": "あるデータアナリストが、データエンジニアリングチームに以下のSpark SQLクエリを提供しました。SELECT district, avg(sales) FROM store_sales_20220101 GROUP BY district; データアナリストは、データエンジニアリングチームが毎日このクエリを実行することを希望しています。テーブル名の末尾にある日付（20220101）は、クエリを実行するたびに、自動的に現在の日付に置き換えられる必要があります。このプロセスを効率的に自動化するために、データエンジニアリングチームが使用できるアプローチはどれか？",
+      "question_text": "あるデータアナリストが、データエンジニアリングチームに以下の Spark SQL クエリを提供しました。```SELECT district, avg(sales) FROM store_sales_20220101 GROUP BY district;``` データアナリストは、データエンジニアリングチームが毎日このクエリを実行することを希望しています。テーブル名の末尾にある日付（20220101）は、クエリを実行するたびに、自動的に現在の日付に置き換えられる必要があります。このプロセスを効率的に自動化するために、データエンジニアリングチームが使用できるアプローチはどれか？",
       "options": {
         "A": "PySpark を使ってクエリをラップし、Python の文字列変数システムを使って、テーブル名を自動的に更新することができます。",
         "B": "テーブル名の中の日付を、手動で現在の日付に置き換えることができる。",
@@ -295,10 +295,10 @@
       "question_number": 23,
       "question_text": "あるデータエンジニアが、外部ソースからPySpark DataFrame raw_dfにデータを取り込みました。彼らは、データアナリストがデータの品質保証チェックを行うために、このデータをSQLで簡単に利用できるようにする必要があります。データエンジニアは、Sparkセッションの残りの時間だけこのデータをSQLで利用できるようにするために、次のどのコマンドを実行する必要がありますか？",
       "options": {
-        "A": "raw_df.createOrReplaceTempView(\"raw_df\")を実行します。",
-        "B": "raw_df.createTable(\"raw_df\")を実行します。",
-        "C": "raw_df.write.save(\"raw_df\")を実行します。",
-        "D": "raw_df.saveAsTable(\"raw_df\")。",
+        "A": "`raw_df.createOrReplaceTempView(\"raw_df\")` を実行します。",
+        "B": "`raw_df.createTable(\"raw_df\")` を実行します。",
+        "C": "`raw_df.write.save(\"raw_df\")` を実行します。",
+        "D": "`raw_df.saveAsTable(\"raw_df\")`",
         "E": "PySpark と SQL の間でデータを共有する方法はありません。"
       },
       "correct_answer": "A",
@@ -319,7 +319,7 @@
     },
     {
       "question_number": 25,
-      "question_text": "データエンジニアは、データソース上のストリーミング読み取りを実行するためのコードブロックを開発しました。コードブロックは以下のとおりです。(spark .read .schema(schema) .format(\"cloudFiles\") .option(\"cloudFiles.format\", \"json\") .load(dataSource))。コードブロックはエラーを返しています。ストリーミング読み取りを正常に実行するようにブロックを構成するために、以下のうちどの変更を行う必要がありますか？",
+      "question_text": "データエンジニアは、データソース上のストリーミング読み取りを実行するためのコードブロックを開発しました。コードブロックは以下のとおりです。```(spark .read .schema(schema) .format(\"cloudFiles\") .option(\"cloudFiles.format\", \"json\") .load(dataSource))``` コードブロックはエラーを返しています。ストリーミング読み取りを正常に実行するようにブロックを構成するために、以下のうちどの変更を行う必要がありますか？",
       "options": {
         "A": ".read行を .readStreamに置き換える必要がある。",
         "B": ".read行の後に新しい .stream 行を追加する必要がある。",
@@ -332,7 +332,7 @@
     },
     {
       "question_number": 26,
-      "question_text": "データエンジニアは、構造化ストリーミングジョブを構成して、テーブルから読み取り、データを操作し、新しいテーブルにストリーミング書き込みを実行するようにしました。データエンジニアが使用するコード ブロックは次のとおりです：(spark.table(\"sales\") .withColumn(\"avg_price\", col(\"sales\") / col(\"units\")) .writeStream .option(\"checkpointLocation\", checkpointPath) .outputMode(\"complete\") ._____ .table(\"new_sales\"))。データエンジニアが、クエリに1つのマイクロバッチを実行させて、利用可能なすべてのデータを処理させたいだけであれば、次のコードのうちどれを実行すればよいでしょうか。",
+      "question_text": "データエンジニアは、構造化ストリーミングジョブを構成して、テーブルから読み取り、データを操作し、新しいテーブルにストリーミング書き込みを実行するようにしました。データエンジニアが使用するコード ブロックは次のとおりです：```(spark.table(\"sales\") .withColumn(\"avg_price\", col(\"sales\") / col(\"units\")) .writeStream .option(\"checkpointLocation\", checkpointPath) .outputMode(\"complete\") ._____ .table(\"new_sales\"))``` データエンジニアが、クエリに1つのマイクロバッチを実行させて、利用可能なすべてのデータを処理させたいだけであれば、次のコードのうちどれを実行すればよいでしょうか。",
       "options": {
         "A": "trigger(once=True)",
         "B": "trigger(continuous=\"once\")",
@@ -413,7 +413,7 @@
       "question_text": "Delta Live Tablesは、Databricks上のSparkとDelta Lakeを利用する標準的なデータパイプラインと比較して、ELTパイプラインに提供する利点は以下のどれですか？",
       "options": {
         "A": "データテーブルの依存関係を宣言し、維持する機能",
-        "B": "PythonやSQLでパイプラインを書く機能",
+        "B": "Python や SQL でパイプラインを書く機能",
         "C": "以前のバージョンのデータテーブルにアクセスする機能",
         "D": "コンピュートリソースを自動的にスケールする機能",
         "E": "選択肢なし"
@@ -532,8 +532,8 @@
         "A": "Jobs UIからクエリを毎日1回実行するようにスケジュールする。",
         "B": "Databricks SQLのクエリのページからクエリを毎日1回更新するようにスケジュールする。",
         "C": "Jobs UIからクエリを毎日12時間ごとに実行するようにスケジュールする。",
-        "D": "Databricks SQLのSQLエンドポイントのページからクエリを毎日1回更新するようにスケジュールする。",
-        "E": "Databricks SQLのSQLエンドポイントのページからクエリを毎日12時間ごとに更新するようにスケジュールする。"
+        "D": "Databricks SQL の SQLエンドポイントのページからクエリを毎日1回更新するようにスケジュールする。",
+        "E": "Databricks SQL の SQLエンドポイントのページからクエリを毎日12時間ごとに更新するようにスケジュールする。"
       },
       "correct_answer": "B",
       "explanation": "Databricks SQLのクエリページから直接スケジュールを設定することが最も適切です。"
@@ -568,11 +568,11 @@
       "question_number": 44,
       "question_text": "新しいデータエンジニアが会社に入社しました。このデータエンジニアは、メールアドレス new.engineer@company.com で会社のDatabricksワークスペースに追加されました。データエンジニアは、データベース retail 内のテーブル sales をクエリできる必要があります。新しいデータエンジニアは既にデータベース retail に対するUSAGE権限を付与されています。新しいデータエンジニアに適切な権限を付与するために使用するコマンドは次のうちどれですか？",
       "options": {
-        "A": "GRANT USAGE ON TABLE sales TO new.engineer@company.com;",
-        "B": "GRANT CREATE ON TABLE sales TO new.engineer@company.com;",
-        "C": "GRANT SELECT ON TABLE sales TO new.engineer@company.com;",
-        "D": "GRANT USAGE ON TABLE new.engineer@company.com TO sales;",
-        "E": "GRANT SELECT ON TABLE new.engineer@company.com TO sales;"
+        "A": "`GRANT USAGE ON TABLE sales TO new.engineer@company.com;`",
+        "B": "`GRANT CREATE ON TABLE sales TO new.engineer@company.com;`",
+        "C": "`GRANT SELECT ON TABLE sales TO new.engineer@company.com;`",
+        "D": "`GRANT USAGE ON TABLE new.engineer@company.com TO sales;`",
+        "E": "`GRANT SELECT ON TABLE new.engineer@company.com TO sales;`"
       },
       "correct_answer": "C",
       "explanation": "テーブルをクエリするにはSELECT権限が必要です。テーブルにはUSAGE権限は存在しません。"
@@ -581,11 +581,11 @@
       "question_number": 45,
       "question_text": "新しいデータエンジニア new.engineer@company.com がELTプロジェクトに割り当てられました。このデータエンジニアは、プロジェクトを完全に管理するためにテーブル sales に対する完全な権限が必要です。新しいデータエンジニアにテーブルに対する完全な権限を付与するために使用できるコマンドは次のうちどれですか？",
       "options": {
-        "A": "GRANT ALL PRIVILEGES ON TABLE sales TO new.engineer@company.com;",
-        "B": "GRANT USAGE ON TABLE sales TO new.engineer@company.com;",
-        "C": "GRANT ALL PRIVILEGES ON TABLE new.engineer@company.com TO sales;",
-        "D": "GRANT SELECT ON TABLE sales TO new.engineer@company.com;",
-        "E": "GRANT SELECT CREATE MODIFY ON TABLE sales TO new.engineer@company.com;"
+        "A": "`GRANT ALL PRIVILEGES ON TABLE sales TO new.engineer@company.com;`",
+        "B": "`GRANT USAGE ON TABLE sales TO new.engineer@company.com;`",
+        "C": "`GRANT ALL PRIVILEGES ON TABLE new.engineer@company.com TO sales;`",
+        "D": "`GRANT SELECT ON TABLE sales TO new.engineer@company.com;`",
+        "E": "`GRANT SELECT CREATE MODIFY ON TABLE sales TO new.engineer@company.com;`"
       },
       "correct_answer": "A",
       "explanation": "ALL PRIVILEGESを使用することで、テーブルに対する完全な管理権限を付与できます。"
